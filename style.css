@@ -26,6 +26,7 @@ body
 	list-style:none;
 	padding-left: 0px;
 	padding-top: 1.8%;
+	margin-top: 0%;
 }
 
 .horizontal-list li
@@ -48,6 +49,58 @@ body
 	color:lightgrey;
 	border-bottom: 1px solid white;
 }
+
+
+/* Dropdown items on small screens */
+
+.dropdown
+{
+   position: absolute;
+   top:3%;
+   right:7%;
+   display: none;
+}
+
+#dropdown-items
+{
+	width: 0;
+	height: 0;
+	position: absolute;
+	overflow: hidden;
+	transition: all 2s ease-in-out;
+	top:6%;
+	right:7%;
+ }
+ #dropdown-items ul
+ {
+	list-style:none;
+ }
+
+ #dropdown-items a
+{
+	text-decoration: none;
+	color:white;
+	transition: color 0.5s,border-bottom 4s;
+	font-size: 1.1rem;
+}
+
+#dropdown-items a:hover
+{
+	color:lightgrey;
+	border-bottom: 1px solid white;
+}
+
+#dropdown-items:target
+{
+	height: 30%;
+	width: 25%;
+	background-color: #9B9D8D;
+	top:6%;
+	right:7%;
+	
+}
+
+
 
 /*Text Center Class*/
 
@@ -497,7 +550,8 @@ section.row-align div
 	#body-header h1
 {
 	font-size: 280%;
-	margin-top: 30%;
+	padding-top: 27%;
+	margin-top: 0%;
 }
 .timeline-divider
 {
@@ -528,7 +582,32 @@ section.row-align div
 
 @media screen  and (max-width:572px)
 {
-	
+	#body-header h1
+	{
+		padding-top: 42%;
+		margin-top: 0%;
+	}
+	.header-menu    
+	{ 
+		display: none; 
+	}
+	.dropdown 
+	{ 
+		display: inline-block;
+	}
+
+	.contact-header
+	{
+		padding-left: 25%;
+	}
+	.contact-me button
+	{
+		width:40%;
+	}
+	.section-heading span
+	{
+		font-size: 160%;
+	}
 }
 
 
