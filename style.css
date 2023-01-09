@@ -23,7 +23,7 @@ body
 /*Horizontal List*/
 .horizontal-list
 {
-	style-type: none;
+	list-style:none;
 	padding-left: 0px;
 	padding-top: 1.8%;
 }
@@ -111,10 +111,12 @@ position :relative;
 #about p
 {
 	color:grey;
-	padding-left:200px;
-	padding-right:200px;
+	padding-left:15%;
+	padding-right:15%;
+	padding-bottom: 5%;
 	font-family: sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
+	line-height: 2rem;
 }
 
 .text-highlight
@@ -386,6 +388,19 @@ section.row-align div
     z-index: 1;
 }
 
+.experience-box:before
+{
+	content: '';
+    position: absolute;
+    background: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000030_1550710829_ninjasicon.png);
+    top: 2%;
+    left: 3%;
+    width: 20%;
+    height: 32%;
+    background-repeat-x: no-repeat;
+    background-size: contain;
+}
+
 .timeline-box:nth-child(2n-1)::after
 {
 	content: '';
@@ -434,11 +449,11 @@ section.row-align div
 	background-size:contain;
 	background-repeat: no-repeat;
 }*/
-{
+/* {
 	color:#2B57A4;
 	margin-bottom: -4%;
 	
-}
+} */
 .timeline-box h2 img
 {
 	width: 12%;
@@ -464,11 +479,55 @@ section.row-align div
 	margin-top: -5%;
 }
 
-.experience-box h2 img
+.education-box:before
 {
-	width: 10%;
-	margin-right: 55%;
+	content: '';
+    position: absolute;
+    background: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000032_1550746413_iiitd_logo.png);
+    top: 2%;
+    left: 3%;
+    width: 20%;
+    height: 32%;
+    background-repeat-x: no-repeat;
+    background-size: contain;
+}
 
+@media screen  and (max-width:768px)
+{
+	#body-header h1
+{
+	font-size: 280%;
+	margin-top: 30%;
+}
+.timeline-divider
+{
+	left:8%;
+}
+.timeline-box
+{
+	width: 80%;
+	left:10%!important;
+}
+
+.timeline-box::after
+{
+	
+	left:-7.5%!important;
+}
+
+#form-div
+{
+	width: 80%;
+}
+#contact-div
+{
+	width: 80%;
+}
+
+}
+
+@media screen  and (max-width:572px)
+{
 	
 }
 
