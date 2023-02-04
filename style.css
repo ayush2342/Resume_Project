@@ -454,7 +454,7 @@ section.row-align div
     left: 3%;
     width: 20%;
     height: 32%;
-    background-repeat-x: no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
 }
 
@@ -545,7 +545,7 @@ section.row-align div
     left: 3%;
     width: 20%;
     height: 32%;
-    background-repeat-x: no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
 }
 
@@ -611,6 +611,15 @@ section.row-align div
 	.section-heading span
 	{
 		font-size: 160%;
+	}
+}
+
+@media screen and (min-width:572px)
+{
+	#dropdown-items:target
+	{
+		height: 0;
+	    width: 0;
 	}
 }
 
