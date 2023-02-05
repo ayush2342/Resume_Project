@@ -25,8 +25,8 @@ var ScrollInterval= setInterval(function IntervalHandler()
         currPosition=0;
         clearInterval(ScrollInterval);
     }
-   window.scrollBy(0,50);
-   currPosition+=50;
+   window.scrollBy(0,100);
+   currPosition+=100;
    console.log(currPosition);
    console.log(destiPosition);
 
