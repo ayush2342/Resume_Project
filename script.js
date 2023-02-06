@@ -4,6 +4,7 @@ var anchorTags=document.querySelectorAll(".nav-menu a");
 
 var currPosition=0;
 var destiPosition;
+var ScrollInterval;
 
 for(var i=0;i<anchorTags.length;i++)
 {
@@ -14,12 +15,20 @@ var targetSection = this.innerHTML.trim().toLowerCase();
 
 
 var targetElement=document.getElementById(targetSection);
-
 destiPosition=targetElement.getBoundingClientRect().y;
+ScrollInterval= setInterval(IntervalHandler,50,destiPosition);
 
-var ScrollInterval= setInterval(function IntervalHandler()
+// Another way
+//  ScrollInterval= setInterval(function()
+//  {
+//     IntervalHandler(destiPosition);
+//  },50);
+
+})
+}
+
+function IntervalHandler()
 {
-   
     if(currPosition>=destiPosition)
     {
         currPosition=0;
@@ -27,10 +36,6 @@ var ScrollInterval= setInterval(function IntervalHandler()
     }
    window.scrollBy(0,100);
    currPosition+=100;
-
-},50);
-
-})
 }
 
 
