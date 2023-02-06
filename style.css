@@ -3,12 +3,15 @@ body
 	margin:0px;
 	padding: 0px;
 	box-sizing: border-box;
+	min-width: 515px;
 	width: 100%;
+	
 }
 
 :root
 {
 	--section-color-blue:#2B57A4;
+	
 }
 
 /*Body Header*/
@@ -78,6 +81,7 @@ body
  #dropdown-items ul
  {
 	list-style:none;
+	width: 100%;
  }
 
  #dropdown-items a
@@ -88,11 +92,11 @@ body
 	font-size: 1.1rem;
 }
 
-#dropdown-items a:hover
+/* #dropdown-items a:hover
 {
 	color:lightgrey;
 	border-bottom: 1px solid white;
-}
+} */
 
 #dropdown-items:target
 {
