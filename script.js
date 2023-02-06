@@ -44,57 +44,85 @@ var progressContainer=document.getElementById("skills-container");
 var skillBars=document.querySelectorAll(".skill-progress > div");
 
 window.addEventListener("scroll",checkScroll);
-var animationsDone=false;
 
-
-
-function initialWidth()
-{
-    for(let bar of skillBars)
-    {
-           bar.style.width=0+"%";
-    }
+// function initialWidth()
+// {
+//     for(let bar of skillBars)
+//     {
+//            bar.style.width=0+"%";
+//     }
     
+// }
+
+// initialWidth();
+
+// function fillbars()
+// {
+//     for(let bar of skillBars)
+//     {
+//         let maxWidth=bar.getAttribute("data-bar-width");
+//         let currWidth=0;
+//         let interval=setInterval(function()
+//         {
+//             if(currWidth>maxWidth)
+//             {
+//                 clearInterval(interval);
+//             }
+//             currWidth++;
+//             bar.style.width=currWidth+"%";
+
+//         },15);
+           
+//     }
+// }
+
+function initialiseBar(bar) {
+    bar.setAttribute("data-visited", false);
+    bar.style.width = 0 + '%';
 }
 
-initialWidth();
+for (var bar of skillBars) {
+    initialiseBar(bar);
+}
 
-function fillbars()
+function fillBar(bar)
 {
-    for(let bar of skillBars)
-    {
-        let maxWidth=bar.getAttribute("data-bar-width");
+
+    let maxWidth=bar.getAttribute("data-bar-width");
         let currWidth=0;
         let interval=setInterval(function()
         {
-            if(currWidth>maxWidth)
+            if(currWidth>=maxWidth)
             {
                 clearInterval(interval);
+                return;
             }
             currWidth++;
             bar.style.width=currWidth+"%";
 
-        },15);
-           
-    }
+        },5);
 }
-
-
 
 
 function checkScroll()
 {
-    var cord=progressContainer.getBoundingClientRect();
-    if(!animationsDone&&cord.top<=window.innerHeight)
+    for(let i of skillBars)
     {
-        animationsDone=true;
-        fillbars();
+        let cord=i.getBoundingClientRect();
+
+        if(i.getAttribute("data-visited") == "false"&&cord.top<=window.innerHeight)
+        {
+            i.setAttribute("data-visited", true);
+            fillBar(i);
+        }
+        else if(cord.top>window.innerHeight)
+        {
+            i.setAttribute("data-visited", false);
+            initialiseBar(i);
+        }
     }
-    else if(cord.top>window.innerHeight)
-    {
-        animationsDone=false;
-        initialWidth();
-    }
+    
+   
    
 }
 
